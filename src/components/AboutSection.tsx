@@ -1,109 +1,174 @@
-import { Heart, MapPin, Leaf, Award } from 'lucide-react'
+import { Heart, MapPin, Leaf, Users } from 'lucide-react'
 
 export default function AboutSection() {
-  const values = [
-    {
-      icon: Heart,
-      title: "Passion-Driven",
-      description: "Started by a couple who believe everyone deserves their perfect cup of tea"
-    },
-    {
-      icon: MapPin,
-      title: "Melbourne Local",
-      description: "Proudly based and owned in Melbourne, supporting our local community"
-    },
-    {
-      icon: Leaf,
-      title: "100% Organic",
-      description: "Only the finest organic ingredients, sourced ethically and sustainably"
-    },
-    {
-      icon: Award,
-      title: "Quality First",
-      description: "Hand-blended with care, ensuring every cup meets our high standards"
-    }
-  ]
-
   return (
-    <section id="about" className="py-20 bg-brew-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="py-24 bg-gradient-to-br from-brew-background to-brew-primary/5 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-20 right-20 w-32 h-32 bg-brew-accent/20 rounded-full blur-3xl floating-animation"></div>
+      <div className="absolute bottom-20 left-20 w-40 h-40 bg-brew-primary/20 rounded-full blur-3xl floating-animation-delayed"></div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div>
-              <h2 className="text-4xl lg:text-5xl font-serif font-bold text-brew-primary mb-6">
+            <div className="space-y-6">
+              <div className="inline-flex items-center bg-brew-accent/20 text-brew-primary px-6 py-3 rounded-full text-lg font-semibold">
+                <Heart className="w-5 h-5 mr-2" />
                 Our Story
-              </h2>
-              <div className="space-y-4 text-lg text-brew-text-light leading-relaxed">
-                <p>
-                  We're Sarah and James, a Melbourne couple who fell in love with the art of tea blending during our travels through Asia. We discovered that the perfect cup of tea isn't just about taste—it's about how it makes you feel.
-                </p>
-                <p>
-                  Frustrated by one-size-fits-all tea options, we dreamed of creating something personal. Just like how froyo lets you customize your perfect treat, we wanted to bring that same joy and personalization to tea.
-                </p>
-                <p>
-                  Every blend we create is made with 100% organic ingredients, sourced directly from sustainable farms. We believe that what's good for you should also be good for the planet.
-                </p>
               </div>
+              
+              <h2 className="text-5xl lg:text-6xl font-serif font-bold leading-tight">
+                <span className="gradient-text">Locally Owned,</span>
+                <br />
+                <span className="text-brew-primary">Globally Inspired</span>
+              </h2>
+              
+              <p className="text-xl lg:text-2xl text-brew-text-light leading-relaxed">
+                We're a Melbourne couple passionate about creating the perfect cup of tea for every mood, moment, and person. 🫖💕
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {values.map((value, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 w-10 h-10 bg-brew-accent/20 rounded-lg flex items-center justify-center">
-                    <value.icon className="w-5 h-5 text-brew-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-brew-primary mb-1">
-                      {value.title}
-                    </h3>
-                    <p className="text-sm text-brew-text-light">
-                      {value.description}
-                    </p>
-                  </div>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4 p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-brew-primary/10 hover-lift">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-brew-accent to-brew-primary rounded-2xl flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-white" />
                 </div>
-              ))}
+                <div>
+                  <h3 className="text-xl font-serif font-semibold text-brew-primary mb-2">
+                    Born in Melbourne
+                  </h3>
+                  <p className="text-brew-text-light">
+                    Proudly local, we understand Melbourne's unique coffee culture and are excited to bring the same artisanal approach to tea blending.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-brew-primary/10 hover-lift">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-brew-accent to-brew-primary rounded-2xl flex items-center justify-center">
+                  <Leaf className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-serif font-semibold text-brew-primary mb-2">
+                    100% Organic Promise
+                  </h3>
+                  <p className="text-brew-text-light">
+                    Every ingredient is carefully sourced from organic farms. We believe what goes into your body should be pure, natural, and beneficial.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-brew-primary/10 hover-lift">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-brew-accent to-brew-primary rounded-2xl flex items-center justify-center">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-serif font-semibold text-brew-primary mb-2">
+                    Personal Touch
+                  </h3>
+                  <p className="text-brew-text-light">
+                    As a small, couple-owned business, every blend is hand-crafted with love. We're not just selling tea – we're sharing our passion for wellness and flavor.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Image */}
+          {/* Right Image/Visual */}
           <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-brew-accent/20 to-brew-primary/20">
-              <img 
-                src="https://images.unsplash.com/photo-1547965010-3189f704431b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzI1Njd8MHwxfHNlYXJjaHw1fHx0ZWElMjBibGVuZGluZyUyMGhlcmJzJTIwaW5ncmVkaWVudHMlMjBvcmdhbmljfGVufDB8MHx8fDE3NTI5MTkyMjF8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Traditional tea preparation"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            {/* Quote Overlay */}
-            <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-6 border border-brew-primary/10">
-              <blockquote className="text-brew-primary">
-                <p className="font-serif text-lg italic mb-3">
-                  "Tea is not just a beverage, it's a moment of mindfulness in our busy lives."
-                </p>
-                <footer className="text-sm text-brew-text-light">
-                  — Sarah & James, Founders
-                </footer>
-              </blockquote>
+            <div className="relative aspect-square">
+              {/* Main Content Card */}
+              <div className="absolute inset-4 glass-card rounded-3xl p-8 shadow-2xl hover-lift">
+                <div className="text-center space-y-6">
+                  <div className="text-6xl mb-4">🫖</div>
+                  
+                  <h3 className="text-3xl font-serif font-bold text-brew-primary">
+                    Why We Started Brew My Mood
+                  </h3>
+                  
+                  <div className="space-y-4 text-brew-text-light">
+                    <p className="text-lg">
+                      "We noticed that while Melbourne has amazing coffee culture, tea lovers were left with limited, generic options."
+                    </p>
+                    
+                    <p className="text-lg">
+                      "We wanted to create something personal – where your mood, taste, and wellness goals shape your perfect cup."
+                    </p>
+                    
+                    <p className="text-lg font-semibold text-brew-primary">
+                      "Every blend tells your story." ✨
+                    </p>
+                  </div>
+
+                  <div className="pt-4">
+                    <div className="flex items-center justify-center gap-4 text-brew-primary">
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-gradient-to-br from-brew-accent to-brew-primary rounded-full mx-auto mb-2 flex items-center justify-center">
+                          <span className="text-white font-bold text-lg">S</span>
+                        </div>
+                        <p className="text-sm font-medium">Sarah</p>
+                      </div>
+                      <div className="text-2xl">💕</div>
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-gradient-to-br from-brew-primary to-brew-accent rounded-full mx-auto mb-2 flex items-center justify-center">
+                          <span className="text-white font-bold text-lg">M</span>
+                        </div>
+                        <p className="text-sm font-medium">Marcus</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-brew-text-light mt-3">
+                      Co-founders & Tea Enthusiasts
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -right-4 glass-card rounded-2xl p-4 shadow-xl floating-animation">
+                <div className="text-center">
+                  <div className="text-2xl mb-1">🌱</div>
+                  <div className="text-xs text-brew-text-light font-medium">Sustainable</div>
+                </div>
+              </div>
+              
+              <div className="absolute -bottom-4 -left-4 glass-card rounded-2xl p-4 shadow-xl floating-animation-delayed">
+                <div className="text-center">
+                  <div className="text-2xl mb-1">❤️</div>
+                  <div className="text-xs text-brew-text-light font-medium">Made with Love</div>
+                </div>
+              </div>
+
+              <div className="absolute top-1/2 -left-6 glass-card rounded-2xl p-3 shadow-xl floating-animation">
+                <div className="text-center">
+                  <div className="text-xl">🇦🇺</div>
+                  <div className="text-xs text-brew-text-light font-medium mt-1">Melbourne</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-20 text-center bg-gradient-to-r from-brew-primary/5 to-brew-accent/5 rounded-2xl p-12">
-          <h3 className="text-3xl font-serif font-bold text-brew-primary mb-4">
-            Ready to Start Your Tea Journey?
-          </h3>
-          <p className="text-xl text-brew-text-light mb-8 max-w-2xl mx-auto">
-            Join our community of tea lovers and be the first to experience personalized tea blending when we launch.
-          </p>
-          <a 
-            href="#quiz" 
-            className="inline-flex items-center bg-brew-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brew-primary/90 transition-colors"
-          >
-            Take the Quiz Again
-          </a>
+        {/* Bottom Stats */}
+        <div className="mt-20 pt-16 border-t border-brew-primary/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { number: '50+', label: 'Organic Ingredients', emoji: '🌿' },
+              { number: '100%', label: 'Melbourne Made', emoji: '🇦🇺' },
+              { number: '∞', label: 'Blend Possibilities', emoji: '✨' },
+              { number: '2', label: 'Passionate Founders', emoji: '💕' }
+            ].map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                  {stat.emoji}
+                </div>
+                <div className="text-3xl lg:text-4xl font-serif font-bold text-brew-primary mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-brew-text-light font-medium">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
