@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brew My Mood Brand Colors */
+    --brew-background: 37 15% 98%; /* #FBFAF7 */
+    --brew-primary: 142 33% 23%; /* #264E36 */
+    --brew-accent: 42 42% 66%; /* #D1B87F */
+    --brew-text: 142 33% 15%; /* Dark green for text */
+    --brew-text-light: 142 15% 45%; /* Lighter green for secondary text */
+    
+    /* Default shadcn colors */
+    --background: 37 15% 98%;
+    --foreground: 142 33% 15%;
+    --card: 37 15% 98%;
+    --card-foreground: 142 33% 15%;
+    --popover: 37 15% 98%;
+    --popover-foreground: 142 33% 15%;
+    --primary: 142 33% 23%;
+    --primary-foreground: 37 15% 98%;
+    --secondary: 42 42% 66%;
+    --secondary-foreground: 142 33% 15%;
+    --muted: 37 8% 92%;
+    --muted-foreground: 142 15% 45%;
+    --accent: 42 42% 66%;
+    --accent-foreground: 142 33% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 37 8% 88%;
+    --input: 37 8% 88%;
+    --ring: 142 33% 23%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+
+    background-color: hsl(var(--brew-background));
+    color: hsl(var(--brew-text));
+  }
+}
+
+@layer components {
+  .brew-heading {
+    @apply font-serif text-brew-primary;
+  }
+  
+  .brew-text {
+    @apply font-sans text-brew-text;
+  }
+  
+  .brew-text-light {
+    @apply font-sans text-brew-text-light;
+  }
+  
+  .brew-button {
+    @apply bg-brew-primary text-white hover:bg-brew-primary/90 transition-colors duration-200;
+  }
+  
+  .brew-button-accent {
+    @apply bg-brew-accent text-brew-primary hover:bg-brew-accent/90 transition-colors duration-200;
+  }
+}
