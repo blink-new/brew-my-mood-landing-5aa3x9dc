@@ -1,125 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    /* Brew My Mood Brand Colors */
-    --brew-background: 37 15% 98%; /* #FBFAF7 */
-    --brew-primary: 142 33% 23%; /* #264E36 */
-    --brew-accent: 42 42% 66%; /* #D1B87F */
-    --brew-text: 142 33% 15%; /* Dark green for text */
-    --brew-text-light: 142 15% 45%; /* Lighter green for secondary text */
-    
-    /* Default shadcn colors */
-    --background: 37 15% 98%;
-    --foreground: 142 33% 15%;
-    --card: 37 15% 98%;
-    --card-foreground: 142 33% 15%;
-    --popover: 37 15% 98%;
-    --popover-foreground: 142 33% 15%;
-    --primary: 142 33% 23%;
-    --primary-foreground: 37 15% 98%;
-    --secondary: 42 42% 66%;
-    --secondary-foreground: 142 33% 15%;
-    --muted: 37 8% 92%;
-    --muted-foreground: 142 15% 45%;
-    --accent: 42 42% 66%;
-    --accent-foreground: 142 33% 15%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 37 8% 88%;
-    --input: 37 8% 88%;
-    --ring: 142 33% 23%;
-    --radius: 1rem;
-  }
+:root {
+  --primary: 152 46% 26%;
+  --accent: 42 42% 66%;
+  --background: 60 50% 98%;
+  --foreground: 152 46% 26%;
+  --muted: 60 25% 96%;
+  --muted-foreground: 0 0% 45%;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground font-sans;
-
-    background-color: hsl(var(--brew-background));
-    color: hsl(var(--brew-text));
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@layer components {
-  .brew-heading {
-    @apply font-serif text-brew-primary;
-  }
-  
-  .brew-text {
-    @apply font-sans text-brew-text;
-  }
-  
-  .brew-text-light {
-    @apply font-sans text-brew-text-light;
-  }
-  
-  .brew-button {
-    @apply bg-brew-primary text-white hover:bg-brew-primary/90 transition-all duration-300;
-  }
-  
-  .brew-button-accent {
-    @apply bg-brew-accent text-brew-primary hover:bg-brew-accent/90 transition-all duration-300;
-  }
-
-  .floating-animation {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .floating-animation-delayed {
-    animation: float 6s ease-in-out infinite 2s;
-  }
-
-  .pulse-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
-  }
-
-  .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--brew-primary)), hsl(var(--brew-accent)));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .glass-card {
-    background: rgb(255 255 255 / 70%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgb(255 255 255 / 20%);
-  }
-
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgb(38 78 54 / 15%);
-  }
+body {
+  font-family: Inter, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  line-height: 1.6;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-inter {
+  font-family: Inter, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom curves */
+.curve-top {
+  clip-path: ellipse(100% 100% at 50% 0%);
+}
+
+.curve-bottom {
+  clip-path: ellipse(100% 100% at 50% 100%);
+}
+
+/* Organic shapes */
+.organic-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+.organic-shape-2 {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px hsl(152deg 46% 26% / 20%);
+}
+
+/* Subtle animations */
 @keyframes float {
-  0%, 100% {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0%;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 100%;
     transform: translateY(0);
   }
-
-  50% {
-    transform: translateY(-20px);
-  }
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgb(209 184 127 / 30%);
-  }
+.fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
 
-  50% {
-    box-shadow: 0 0 40px rgb(209 184 127 / 60%);
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
 }
